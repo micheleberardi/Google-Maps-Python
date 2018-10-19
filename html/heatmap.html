@@ -1,0 +1,68 @@
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>Google Maps - pygmaps </title>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=KEY_API&libraries=visualization&sensor=true_or_false"></script>
+<script type="text/javascript">
+        function initialize() {
+                var centerlatlng = new google.maps.LatLng(40.714298, -74.005997);
+                var myOptions = {
+                        zoom: 10,
+                        center: centerlatlng,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+var heatmap_points = [
+new google.maps.LatLng(40.714294, -74.006000),
+new google.maps.LatLng(40.709500, -74.004604),
+new google.maps.LatLng(40.714294, -74.006000),
+new google.maps.LatLng(40.710400, -74.010513),
+new google.maps.LatLng(40.710457, -74.008026),
+new google.maps.LatLng(40.714294, -74.006000),
+new google.maps.LatLng(40.713341, -74.004098),
+new google.maps.LatLng(40.705113, -74.007133),
+new google.maps.LatLng(40.714000, -74.007000),
+new google.maps.LatLng(40.702703, -74.011138),
+new google.maps.LatLng(40.714300, -74.006000),
+new google.maps.LatLng(40.714300, -74.006000),
+new google.maps.LatLng(40.707248, -74.005706),
+new google.maps.LatLng(40.710679, -74.005499),
+new google.maps.LatLng(40.709958, -74.009739),
+new google.maps.LatLng(40.709396, -74.012111),
+new google.maps.LatLng(40.714300, -74.006000),
+new google.maps.LatLng(40.711548, -74.007155),
+new google.maps.LatLng(40.714300, -74.006000),
+];
+
+var pointArray = new google.maps.MVCArray(heatmap_points);
+var heatmap;
+heatmap = new google.maps.visualization.HeatmapLayer({
+
+data: pointArray
+});
+heatmap.setMap(map);
+heatmap.set('threshold', 10);
+heatmap.set('radius', 30);
+heatmap.set('opacity', 1);
+heatmap.set('dissipating', true);
+heatmap.set('gradient', g);
+        }
+var g = [
+'rgba(255, 0, 0, 0)',
+'rgba(255, 255, 0, 0.9)',
+'rgba(0, 255, 0, 0.7)',
+'rgba(173, 255, 47, 0.5)',
+'rgba(152, 251, 152, 0)',
+'rgba(152, 251, 152, 0)',
+'rgba(0, 0, 238, 0.5)',
+'rgba(186, 85, 211, 0.7)',
+'rgba(255, 0, 255, 0.9)',
+'rgba(255, 0, 0, 1)']
+</script>
+</head>
+<body style="margin:0px; padding:0px;" onload="initialize()">
+        <div id="map_canvas" style="width: 100%; height: 100%;"></div>
+</body>
+</html>
