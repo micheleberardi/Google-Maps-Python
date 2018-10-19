@@ -9,6 +9,12 @@ To install use pip install gmplot
 
 The dataset we will be using dataset from mysql databases.
 
+In this dataset the values we will be using are the LAT and LON columns which represent the lattitude and longitude for each of the residents in the dataset. We also see that there are almost 1 million records. We are going to reduce that size for our example to just the first 15,000 records.
+
+
+
 ![Screenshot](images/heatmap.png)
+
+contributor https://eatsleepdata.com
 
 
