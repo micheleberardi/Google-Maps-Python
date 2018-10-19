@@ -9,4 +9,6 @@ To install use pip install gmplot
 
 The dataset we will be using dataset from mysql databases.
 
+![Screenshot](images/heatmap.png)
+
 
